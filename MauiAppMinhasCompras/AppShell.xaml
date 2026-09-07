@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<Shell
+    x:Class="MauiAppMinhasCompras.AppShell"
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:sf="clr-namespace:Syncfusion.Maui.Toolkit.SegmentedControl;assembly=Syncfusion.Maui.Toolkit"
+    xmlns:pages="clr-namespace:MauiAppMinhasCompras.Pages"
+    xmlns:views="clr-namespace:MauiAppMinhasCompras.Views"
+    Shell.FlyoutBehavior="Flyout"
+    Title="MauiAppMinhasCompras">
+
+
+    <FlyoutItem Title="Minhas Compras" Icon="icon_compras.png">
+        <ShellContent 
+        Title="Lista de Produtos" 
+        ContentTemplate="{DataTemplate views:ListaProduto}" />
+    </FlyoutItem>
+
+    <FlyoutItem Title="Novo Produto" Icon="icon_add.png">
+        <ShellContent 
+        Title="Cadastrar" 
+        ContentTemplate="{DataTemplate views:NovoProduto}" />
+    </FlyoutItem>
+
+    <Shell.FlyoutFooter>
+        <Grid Padding="15">
+            <sf:SfSegmentedControl x:Name="ThemeSegmentedControl" 
+                VerticalOptions="Center" HorizontalOptions="Center" SelectionChanged="SfSegmentedControl_SelectionChanged"
+                SegmentWidth="40" SegmentHeight="40">
+                <sf:SfSegmentedControl.ItemsSource>
+                    <x:Array Type="{x:Type sf:SfSegmentItem}">
+                        <!-- Removido uso de StaticResource IconLight/IconDark porque os arquivos não existem -->
+                        <sf:SfSegmentItem SemanticProperties.Description="Light mode" />
+                        <sf:SfSegmentItem SemanticProperties.Description="Dark mode" />
+                    </x:Array>
+                </sf:SfSegmentedControl.ItemsSource>
+            </sf:SfSegmentedControl>
+        </Grid>
+    </Shell.FlyoutFooter>
+
+</Shell>

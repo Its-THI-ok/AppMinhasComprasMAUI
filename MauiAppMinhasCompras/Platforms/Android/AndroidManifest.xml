@@ -1,0 +1,8 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android">
+		<!-- Removido android:icon/android:roundIcon temporariamente para evitar erro APT2260
+				 Os ícones do app serão gerados a partir de Resources/AppIcon quando necessário. -->
+		<application android:allowBackup="true" android:supportsRtl="true"></application>
+	<uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+	<uses-permission android:name="android.permission.INTERNET" />
+</manifest>
